@@ -1,6 +1,6 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, Theme } from '@material-ui/core/styles';
 
-export default makeStyles((theme: any) => ({
+export default makeStyles((theme: Theme) => ({
   root:{
     minHeight: '100vh',
   }, searchBtnBox: {
