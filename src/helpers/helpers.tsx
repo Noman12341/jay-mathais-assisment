@@ -29,7 +29,7 @@ export const hasGeolocationSupport = () => {
   return !!navigator.geolocation;
 };
 
-export const getWeatherPic = (weather: any) => {
+export const getWeatherPic = (weather: string) => {
   if (weather === 'clouds') {
     return 'https://i.pinimg.com/originals/d9/4a/8c/d94a8cea609a24c5f3cddea6b7eca593.jpg';
   } if (weather === 'rain') {

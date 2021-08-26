@@ -38,9 +38,7 @@ function MainCard({ cityName }: Iprop){
   useEffect(() => {
     setIsLoading(true);
     const getData = async () => {
-      const info = await getWeatherInfo(cityName);
-      console.log('im running', info);
-      setWeatherInfo(info);
+      setWeatherInfo(await getWeatherInfo(cityName));
       setIsLoading(false);
     };
     getData();
@@ -56,7 +54,7 @@ function MainCard({ cityName }: Iprop){
           </Box>
           <Typography className={classes.tempHeading}>{weatherInfo.temp}</Typography>
           <Box textAlign="center" my={2}>
-            <img height="80" width="80" src={weatherInfo.weatherIcon} />
+            <img height="80" width="80" src={weatherInfo.weatherIcon} alt="weather img" />
           </Box>
           <Box display="flex" justifyContent='space-between' alignItems='center'>
             <Box>
