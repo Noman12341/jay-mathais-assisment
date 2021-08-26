@@ -6,6 +6,7 @@ interface IEvent {
   name?: string | undefined;
   value: unknown;
 }
+const citiesArr: string[] = ['Tokyo', 'Delhi', 'Shanghai', 'Sao Paulo', 'Mexico City'];
 // Root layout component
 function Layout() {
   const classes = useStyle();
@@ -17,11 +18,9 @@ function Layout() {
         <FormControl className={classes.formControl}>
           <InputLabel id="CountryInput">Select City</InputLabel>
           <Select labelId="cityLable" id="city" value={city} onChange={(e: React.ChangeEvent<IEvent>): void => setCity(e.target.value as string)}>
-            <MenuItem value="Tokyo">Tokyo</MenuItem>
-            <MenuItem value="Delhi">Delhi</MenuItem>
-            <MenuItem value="Shanghai">Shanghai</MenuItem>
-            <MenuItem value="Sao Paulo">Sao Paulo</MenuItem>
-            <MenuItem value="Mexico City">Mexico City</MenuItem>
+            {citiesArr.map((item: string) => (
+              <MenuItem value={item} key={item}>{item}</MenuItem>
+            ))}
           </Select>
         </FormControl>
       </Box>
