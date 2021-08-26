@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { Paper, Box, FormControl, InputLabel, Select, MenuItem } from '@material-ui/core';
 import useStyle from './styles';
 
-type InputEvent = React.ChangeEvent<HTMLInputElement>;
-
+interface IEvent {
+  name?: string | undefined;
+  value: unknown;
+}
 // Root layout component
 function Layout() {
   const classes = useStyle();
@@ -14,7 +16,7 @@ function Layout() {
       <Box className={classes.searchBtnBox}>
         <FormControl className={classes.formControl}>
           <InputLabel id="CountryInput">Select City</InputLabel>
-          <Select labelId="cityLable" id="city" value={city} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setCity(e.target.value)}>
+          <Select labelId="cityLable" id="city" value={city} onChange={(e: React.ChangeEvent<IEvent>): void => setCity(e.target.value as string)}>
             <MenuItem value="Tokyo">Tokyo</MenuItem>
             <MenuItem value="Delhi">Delhi</MenuItem>
             <MenuItem value="Shanghai">Shanghai</MenuItem>
