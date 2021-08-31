@@ -54,7 +54,7 @@ function MainCard({ cityName }: Iprop){
           </Box>
           <Typography className={classes.tempHeading}>{weatherInfo.temp}</Typography>
           <Box textAlign="center" my={2}>
-            <img height="80" width="80" src={weatherInfo.weatherIcon} alt="img" />
+            <img height="80" width="80" src={weatherInfo.weatherIcon} alt="weather img" />
           </Box>
           <Box display="flex" justifyContent='space-between' alignItems='center'>
             <Box>
