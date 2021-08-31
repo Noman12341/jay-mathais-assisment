@@ -57,11 +57,11 @@ function MainCard({ cityName }: Iprop){
             <img height="80" width="80" src={`${window.location.origin}/${weatherInfo.weatherIcon}`} alt="weather img" />
           </Box>
           <Box display="flex" justifyContent='space-between' alignItems='center'>
-            <Box>
+            <Box flex={2}>
               <Typography className={classes.dayName}>{weatherInfo.currDay}</Typography>
             </Box>
-            <Box className={classes.description}>{weatherInfo.description}</Box>
-            <Box>
+            <Box flex={5} className={classes.description}>{weatherInfo.description}</Box>
+            <Box flex={2}>
               <Typography component='span' className={classes.maxTemp}>{weatherInfo.temp_max}</Typography>
               <Typography component='span' className={classes.spreader}>|</Typography>
               <Typography component='span' className={classes.minTemp}>{weatherInfo.temp_min}</Typography>
