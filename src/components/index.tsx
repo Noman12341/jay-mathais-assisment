@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Paper, Box, FormControl, InputLabel, Select, MenuItem } from '@material-ui/core';
 import useStyle from './styles';
+import MainCard from './MainCard/MainCard';
 
 interface IEvent {
   name?: string | undefined;
@@ -23,6 +24,9 @@ function Layout() {
             ))}
           </Select>
         </FormControl>
+      </Box>
+      <Box display="flex" justifyContent="center" pt={4}>
+        <MainCard cityName={city} />
       </Box>
     </Paper>
   );
